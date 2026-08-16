@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Ticket } from "lucide-react";
 
 export default function AdminLogin() {
   const router = useRouter();
@@ -47,14 +48,19 @@ export default function AdminLogin() {
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#071A2B] px-4">
-      <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-xl">
+      <div className="w-full max-w-md rounded-2xl border border-white/10 bg-[#0F2740] p-8 shadow-xl shadow-black/20">
 
         <div className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-gray-900">
+          <span className="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-300">
+            <Ticket size={14} />
+            Admin
+          </span>
+
+          <h1 className="mt-5 text-3xl font-bold text-white">
             Admin Login
           </h1>
 
-          <p className="mt-2 text-gray-500">
+          <p className="mt-2 text-slate-400">
             Sign in to manage events
           </p>
         </div>
@@ -63,7 +69,7 @@ export default function AdminLogin() {
 
           {/* Email */}
           <div>
-            <label className="mb-2 block text-sm font-medium text-gray-700">
+            <label className="mb-2 block text-sm font-medium text-slate-300">
               Email
             </label>
 
@@ -76,24 +82,24 @@ export default function AdminLogin() {
                 w-full
                 rounded-lg
                 border
-                border-gray-300
-                bg-white
+                border-white/10
+                bg-white/[0.03]
                 px-4
                 py-3
                 text-base
-                text-gray-900
-                placeholder:text-gray-500
+                text-white
+                placeholder:text-slate-500
                 outline-none
-                focus:border-blue-500
+                focus:border-amber-400/50
                 focus:ring-2
-                focus:ring-blue-200
+                focus:ring-amber-400/20
               "
             />
           </div>
 
           {/* Password */}
           <div>
-            <label className="mb-2 block text-sm font-medium text-gray-700">
+            <label className="mb-2 block text-sm font-medium text-slate-300">
               Password
             </label>
 
@@ -106,24 +112,24 @@ export default function AdminLogin() {
                 w-full
                 rounded-lg
                 border
-                border-gray-300
-                bg-white
+                border-white/10
+                bg-white/[0.03]
                 px-4
                 py-3
                 text-base
-                text-gray-900
-                placeholder:text-gray-500
+                text-white
+                placeholder:text-slate-500
                 outline-none
-                focus:border-blue-500
+                focus:border-amber-400/50
                 focus:ring-2
-                focus:ring-blue-200
+                focus:ring-amber-400/20
               "
             />
           </div>
 
 
           {error && (
-            <p className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-600">
+            <p className="rounded-lg border border-red-400/20 bg-red-400/10 px-4 py-3 text-sm text-red-300">
               {error}
             </p>
           )}
@@ -134,12 +140,12 @@ export default function AdminLogin() {
             className="
               w-full
               rounded-lg
-              bg-blue-600
+              bg-amber-400
               py-3
               font-semibold
-              text-white
+              text-[#071A2B]
               transition
-              hover:bg-blue-700
+              hover:bg-amber-300
               disabled:cursor-not-allowed
               disabled:opacity-50
           "

@@ -248,7 +248,7 @@ export default function AdminDashboard() {
               Admin Dashboard
             </h1>
 
-            <p className="mt-1 text-gray-300">
+            <p className="mt-1 text-slate-400">
               Manage your events
             </p>
           </div>
@@ -271,13 +271,13 @@ export default function AdminDashboard() {
             }}
             className="
               rounded-lg
-              bg-blue-600
+              bg-amber-400
               px-5
               py-3
               font-semibold
-              text-white
+              text-[#071A2B]
               transition
-              hover:bg-blue-700
+              hover:bg-amber-300
             "
           >
             + Add Event
@@ -288,13 +288,13 @@ export default function AdminDashboard() {
             className="
               rounded-lg
               border
-              border-red-500
+              border-red-400/40
               px-5
               py-3
               font-semibold
-              text-red-600
+              text-red-300
               transition
-              hover:bg-red-50
+              hover:bg-red-400/10
             "
           >
             Logout
@@ -305,10 +305,10 @@ export default function AdminDashboard() {
         {showForm && (
         <form
           onSubmit={editingEventId ? handleEditEvent : handleAddEvent}
-          className="mb-8 rounded-xl border border-gray-200 bg-gray-50 p-6"
+          className="mb-8 rounded-xl border border-white/10 bg-[#0F2740] p-6"
         >
           <div className="mb-6 flex items-center justify-between">
-            <h2 className="text-2xl font-bold text-gray-900">
+            <h2 className="text-2xl font-bold text-white">
               {editingEventId ? "Edit Event" : "Add New Event"}
             </h2>
 
@@ -319,7 +319,7 @@ export default function AdminDashboard() {
                 setImage("");
                 setSelectedFile(null);
               }}
-              className="text-gray-500 hover:text-gray-900"
+              className="text-slate-400 hover:text-white"
             >
               ✕
             </button>
@@ -329,7 +329,7 @@ export default function AdminDashboard() {
 
             {/* Title */}
             <div>
-              <label className="mb-2 block font-medium text-gray-700">
+              <label className="mb-2 block font-medium text-slate-300">
                 Event Title
               </label>
 
@@ -339,13 +339,13 @@ export default function AdminDashboard() {
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="Enter event title"
                 required
-                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none focus:border-blue-500"
+                className="w-full rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-white placeholder:text-slate-500 outline-none focus:border-amber-400/50 focus:ring-2 focus:ring-amber-400/20"
               />
             </div>
 
             {/* Category */}
             <div>
-              <label className="mb-2 block font-medium text-gray-700">
+              <label className="mb-2 block font-medium text-slate-300">
                 Category
               </label>
 
@@ -355,13 +355,13 @@ export default function AdminDashboard() {
                 onChange={(e) => setCategory(e.target.value)}
                 placeholder="Hackathon, Workshop..."
                 required
-                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none focus:border-blue-500"
+                className="w-full rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-white placeholder:text-slate-500 outline-none focus:border-amber-400/50 focus:ring-2 focus:ring-amber-400/20"
               />
             </div>
 
             {/* Time */}
             <div>
-              <label className="mb-2 block font-medium text-gray-700">
+              <label className="mb-2 block font-medium text-slate-300">
                 Date & Time
               </label>
 
@@ -370,13 +370,13 @@ export default function AdminDashboard() {
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
                 required
-                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none focus:border-blue-500"
+                className="w-full rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-white outline-none focus:border-amber-400/50 focus:ring-2 focus:ring-amber-400/20 [color-scheme:dark]"
               />
             </div>
 
             {/* Venue */}
             <div>
-              <label className="mb-2 block font-medium text-gray-700">
+              <label className="mb-2 block font-medium text-slate-300">
                 Venue
               </label>
 
@@ -386,13 +386,13 @@ export default function AdminDashboard() {
                 onChange={(e) => setVenue(e.target.value)}
                 placeholder="IGDTUW, Delhi"
                 required
-                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none focus:border-blue-500"
+                className="w-full rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-white placeholder:text-slate-500 outline-none focus:border-amber-400/50 focus:ring-2 focus:ring-amber-400/20"
               />
             </div>
 
             {/* Image */}
             <div className="sm:col-span-2">
-              <label className="mb-2 block font-medium text-gray-700">
+              <label className="mb-2 block font-medium text-slate-300">
                 Event Image
               </label>
 
@@ -417,17 +417,26 @@ export default function AdminDashboard() {
                   w-full
                   rounded-lg
                   border
-                  border-gray-300
-                  bg-white
+                  border-white/10
+                  bg-white/[0.03]
                   px-4
                   py-3
-                  text-gray-900
+                  text-slate-300
+                  file:mr-4
+                  file:rounded-md
+                  file:border-0
+                  file:bg-amber-400/10
+                  file:px-3
+                  file:py-1.5
+                  file:text-sm
+                  file:font-medium
+                  file:text-amber-300
                 "
               />
 
               {image && (
                 <div className="mt-4">
-                  <p className="mb-2 text-sm font-medium text-gray-600">
+                  <p className="mb-2 text-sm font-medium text-slate-400">
                     Image Preview
                   </p>
 
@@ -442,7 +451,7 @@ export default function AdminDashboard() {
 
             {/* Registration Link */}
             <div className="sm:col-span-2">
-              <label className="mb-2 block font-medium text-gray-700">
+              <label className="mb-2 block font-medium text-slate-300">
                 Registration Link
               </label>
 
@@ -452,13 +461,13 @@ export default function AdminDashboard() {
                 onChange={(e) => setRegisterLink(e.target.value)}
                 placeholder="https://example.com/register"
                 required
-                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none focus:border-blue-500"
+                className="w-full rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-white placeholder:text-slate-500 outline-none focus:border-amber-400/50 focus:ring-2 focus:ring-amber-400/20"
               />
             </div>
 
             {/* Description */}
             <div className="sm:col-span-2">
-              <label className="mb-2 block font-medium text-gray-700">
+              <label className="mb-2 block font-medium text-slate-300">
                 Description
               </label>
 
@@ -468,7 +477,7 @@ export default function AdminDashboard() {
                 placeholder="Describe your event..."
                 rows={4}
                 required
-                className="w-full resize-none rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none focus:border-blue-500"
+                className="w-full resize-none rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-white placeholder:text-slate-500 outline-none focus:border-amber-400/50 focus:ring-2 focus:ring-amber-400/20"
               />
             </div>
 
@@ -481,12 +490,12 @@ export default function AdminDashboard() {
               mt-6
               w-full
               rounded-lg
-              bg-blue-600
+              bg-amber-400
               py-3
               font-semibold
-              text-white
+              text-[#071A2B]
               transition
-              hover:bg-blue-700
+              hover:bg-amber-300
               disabled:cursor-not-allowed
               disabled:opacity-50
             "
@@ -504,18 +513,18 @@ export default function AdminDashboard() {
       )}
 
         {/* Events */}
-        <div className="rounded-2xl bg-white p-6 shadow-xl">
+        <div className="rounded-2xl border border-white/10 bg-[#0F2740] p-6 shadow-xl shadow-black/20">
 
-          <h2 className="mb-6 text-2xl font-bold text-gray-900">
+          <h2 className="mb-6 text-2xl font-bold text-white">
             All Events
           </h2>
 
           {loading ? (
-            <p className="text-gray-500">
+            <p className="text-slate-400">
               Loading events...
             </p>
           ) : events.length === 0 ? (
-            <p className="text-gray-500">
+            <p className="text-slate-400">
               No events found.
             </p>
           ) : (
@@ -530,8 +539,11 @@ export default function AdminDashboard() {
                     gap-4
                     rounded-xl
                     border
-                    border-gray-200
+                    border-white/10
+                    bg-white/[0.02]
                     p-5
+                    transition
+                    hover:border-amber-400/30
                     sm:flex-row
                     sm:items-center
                     sm:justify-between
@@ -553,11 +565,11 @@ export default function AdminDashboard() {
                     />
 
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900">
+                      <h3 className="text-lg font-semibold text-white">
                         {event.title}
                       </h3>
 
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-slate-400">
                         {event.venue}
                       </p>
 
@@ -565,12 +577,15 @@ export default function AdminDashboard() {
                         mt-1
                         inline-block
                         rounded-full
-                        bg-blue-100
+                        bg-amber-400/10
                         px-3
                         py-1
                         text-xs
                         font-medium
-                        text-blue-700
+                        text-amber-300
+                        ring-1
+                        ring-inset
+                        ring-amber-400/30
                       ">
                         {event.category}
                       </span>
@@ -586,13 +601,13 @@ export default function AdminDashboard() {
                       className="
                         rounded-lg
                         border
-                        border-blue-600
+                        border-amber-400/40
                         px-4
                         py-2
                         font-medium
-                        text-blue-600
+                        text-amber-300
                         transition
-                        hover:bg-blue-50
+                        hover:bg-amber-400/10
                       "
                     >
                       Edit
@@ -602,13 +617,13 @@ export default function AdminDashboard() {
                       onClick={() => handleDeleteEvent(event._id)}
                       className="
                         rounded-lg
-                        bg-red-600
+                        bg-red-500/90
                         px-4
                         py-2
                         font-medium
                         text-white
                         transition
-                        hover:bg-red-700
+                        hover:bg-red-500
                       "
                     >
                       Delete
