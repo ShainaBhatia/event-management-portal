@@ -88,6 +88,7 @@ The platform allows users to discover and search for events, while administrator
              └──────────────┘                └──────────────┘
 
 # Project Structure
+```text
 event-admin-portal/
 │
 ├── app/
@@ -120,10 +121,10 @@ event-admin-portal/
 ├── .env.local
 ├── package.json
 └── README.md
-
+```
 
 # Authentication Flow
-
+```
 The admin authentication works as follows:
 
 Admin Login
@@ -144,7 +145,7 @@ Store token in HTTP-only cookie
 Access protected dashboard
 
 When the admin logs out, the authentication cookie is removed and the user is redirected to the login page.
-
+```
 # Event CRUD Flow
 
 The admin dashboard supports complete CRUD operations:
@@ -157,7 +158,7 @@ Delete  → DELETE /api/events/[id]
 Events are stored in MongoDB using Mongoose models.
 
 # Image Upload Flow
-
+```
 Event images are uploaded to Cloudinary rather than being stored directly on the server.
 
 Select Image
@@ -173,7 +174,7 @@ Image URL
      │
      ▼
 MongoDB Event Document
-
+```
 Only the Cloudinary image URL is stored in the event document.
 
 # Search & Filtering
@@ -243,7 +244,7 @@ For deployment, the required environment variables must be added to the Vercel p
 # Future Improvements
 
 Possible future improvements include:
-
+```
 Admin analytics dashboard
 Event pagination
 Event sorting
@@ -253,7 +254,7 @@ Email notifications
 Event reminders
 Rich event descriptions
 Calendar integration
-
+```
 ## Admin Test Credentials
 
 To test the admin dashboard:
